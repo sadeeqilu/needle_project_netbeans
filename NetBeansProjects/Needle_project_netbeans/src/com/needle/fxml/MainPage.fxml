@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="891.0" styleClass="pane" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.needle.controller.MainPageController">
+   <children>
+      <VBox alignment="TOP_CENTER" opacity="0.92" prefHeight="595.0" prefWidth="234.0" spacing="5.0" style="-fx-background-color: #2A3135;">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="10.0" />
+         </padding>
+         <children>
+            <VBox alignment="CENTER" prefHeight="56.0" prefWidth="230.0" style="-fx-border-color: orange; -fx-border-width: 0px 0px 0.5px 0px;">
+               <children>
+                  <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Button fx:id="dashboardBtn" alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#handleDashboardBtn" prefHeight="35.0" prefWidth="235.0" styleClass="btn1" stylesheets="@application.css" text="Dashboard">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITESMOKE" glyphName="HOME" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="guestsBtn" alignment="TOP_LEFT" layoutX="13.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#handleGuestBtn" prefHeight="35.0" prefWidth="229.0" styleClass="btn1" stylesheets="@application.css" text="Guests">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITESMOKE" glyphName="USERS" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="roomsPageBtn" alignment="TOP_LEFT" layoutX="13.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#handleRoomBtn" prefHeight="35.0" prefWidth="229.0" styleClass="btn1" stylesheets="@application.css" text="Rooms">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITESMOKE" glyphName="BED" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="hsitoryBtn" alignment="TOP_LEFT" layoutX="13.0" layoutY="121.0" mnemonicParsing="false" onMouseClicked="#handleHistoryBtn" prefHeight="35.0" prefWidth="229.0" styleClass="btn1" stylesheets="@application.css" text="History">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITESMOKE" glyphName="HISTORY" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="logoutBtn" alignment="TOP_LEFT" layoutX="13.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#handleLogoutBtn" prefHeight="35.0" prefWidth="229.0" styleClass="btn1" stylesheets="@application.css" text="Logout">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITESMOKE" glyphName="POWER_OFF" size="20" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <BorderPane fx:id="dashboardPane" opacity="0.76" prefHeight="595.0" prefWidth="657.0" style="-fx-background-color: #f4f4f4;" HBox.hgrow="SOMETIMES">
+         <top>
+            <HBox alignment="CENTER_LEFT" opacity="0.75" prefHeight="66.0" prefWidth="657.0" style="-fx-background-color: orange;" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+               <children>
+                  <Text fill="#2a3135" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="406.95703125">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children></HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefHeight="72.0" prefWidth="627.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="74.0" fitWidth="196.0" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@needle(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</HBox>

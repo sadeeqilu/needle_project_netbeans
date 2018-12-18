@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="dashboard" alignment="TOP_CENTER" prefHeight="479.0" prefWidth="848.0" spacing="5.0"  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.needle.controller.HistoryPageController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="657.0" style="-fx-border-color: orange; -fx-border-width: 0px 0px 0.3px 0px; -fx-background-color: #2A3135;">
+         <children>
+            <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="HISTORY" wrappingWidth="113.2109375">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="818.0" spacing="5.0">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="searchHistoryText" prefHeight="26.0" prefWidth="184.0" promptText="search" style="-fx-background-color: transparent; -fx-border-color: orange; -fx-border-width: 0px 0px 0.7px 0px;" styleClass="txtbox" stylesheets="@style.css">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <FontAwesomeIconView fill="ORANGE" glyphName="SEARCH" size="20" />
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true">
+         <content>
+            <TableView fx:id="HistoryTable" prefHeight="299.0" prefWidth="657.0">
+              <columns>
+                  <TableColumn fx:id="guestCol" editable="false" prefWidth="218.0" text="Guest" />
+                <TableColumn fx:id="roomNumberCol" editable="false" prefWidth="96.0" text="Room number" />
+                <TableColumn fx:id="roomTypeCol" editable="false" prefWidth="60.0" text="Type" />
+                  <TableColumn fx:id="checkInCol" editable="false" prefWidth="155.0" text="Check-in" />
+                  <TableColumn fx:id="checkOutCol" editable="false" prefWidth="189.0" text="Check-out" />
+                  <TableColumn fx:id="priceCol" editable="false" prefWidth="127.0" text="Price" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="657.0" spacing="15.0">
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

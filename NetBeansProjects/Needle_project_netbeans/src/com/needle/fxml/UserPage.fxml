@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="userRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#handleAdmin" prefHeight="542.0" prefWidth="1027.0" styleClass="pane1" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.needle.controller.UserPageController">
+   <top>
+      <HBox alignment="CENTER_LEFT" opacity="0.73" prefHeight="68.0" prefWidth="1027.0" spacing="10.0" style="-fx-background-color: teal;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="HOTEL">
+               <font>
+                  <Font name="Times New Roman" size="19.0" />
+               </font>
+            </Text>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="SOMETIMES" />
+            <Button mnemonicParsing="false" onAction="#handleExitBtn" styleClass="btn11" text="Exit">
+               <graphic>
+                  <FontAwesomeIconView fill="#ae3535" glyphName="POWER_OFF" size="16" wrappingWidth="18.0" />
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox fx:id="MenuPane" alignment="CENTER" fillWidth="false" opacity="0.93" prefHeight="386.0" prefWidth="337.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <VBox fx:id="MenuBox" alignment="TOP_CENTER" maxWidth="-Infinity" opacity="0.93" prefHeight="355.0" prefWidth="295.0" spacing="10.0" style="-fx-background-color: white; -fx-border-radius: 30px; -fx-border-color: teal; -fx-background-radius: 30px;">
+               <children>
+                  <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Select from the menu" underline="true" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <GridPane hgap="5.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="124.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="159.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in date" GridPane.rowIndex="2" />
+                        <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Check-out date" GridPane.rowIndex="4" />
+                        <Text fill="TEAL" layoutX="10.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price per Night" GridPane.rowIndex="1" />
+                        <Text fill="TEAL" layoutX="10.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room type" />
+                        <ComboBox fx:id="roomTypeCombo" onAction="#handleRoomTypeCombo" prefWidth="150.0" promptText="select" GridPane.columnIndex="1" />
+                        <Text fx:id="priceperNightText" fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXDatePicker fx:id="checkInDatePicker" defaultColor="TEAL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXDatePicker fx:id="checkoutDatePicker" defaultColor="TEAL" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <HBox alignment="CENTER" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <ComboBox fx:id="nightsCombo" disable="true" onAction="#handleNightsCombo" prefHeight="27.0" prefWidth="72.0" promptText="0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Night(s)" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="283.0">
+                     <children>
+                        <Button fx:id="roomNextBtn" contentDisplay="RIGHT" disable="true" mnemonicParsing="false" onAction="#handleRoomNextBtn" styleClass="btn10" text="Next   " textFill="TEAL">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="LONG_ARROW_RIGHT" size="18" wrappingWidth="25.0" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox opacity="0.87" prefHeight="342.0" prefWidth="681.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="302.0" prefWidth="681.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <VBox fx:id="personalDetailsBox" alignment="CENTER" prefHeight="318.0" prefWidth="343.0" spacing="20.0" style="-fx-background-color: white;" visible="false">
+                     <children>
+                        <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Details" underline="true" wrappingWidth="117.2060546875" />
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="331.0" spacing="10.0">
+                           <children>
+                              <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone  number:" />
+                              <TextField fx:id="phoneText" prefHeight="27.0" prefWidth="150.0" />
+                              <Button fx:id="verifyBtn" mnemonicParsing="false" onAction="#handleVerifyBtn" prefHeight="27.0" prefWidth="99.0" styleClass="btn10" text="Verify" textFill="TEAL">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16" wrappingWidth="20.714285850524902" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <GridPane fx:id="gridBox" alignment="CENTER" hgap="2.0" prefHeight="175.0" prefWidth="331.0" vgap="5.0" visible="false">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="101.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="215.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+                              <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.rowIndex="1" />
+                              <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" GridPane.rowIndex="2" />
+                              <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" GridPane.rowIndex="3" />
+                              <TextField fx:id="fnameText" GridPane.columnIndex="1" />
+                              <TextField fx:id="lnameText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <RadioButton fx:id="maleRadio" mnemonicParsing="false" text="Male" />
+                                    <RadioButton fx:id="femaleRadio" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Female" />
+                                 </children>
+                              </HBox>
+                              <JFXDatePicker fx:id="dobPicker" prefHeight="25.0" prefWidth="221.0" promptText="mm/dd/yyyy" showWeekNumbers="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                        <HBox fx:id="nextcancelbox" alignment="CENTER" prefHeight="48.0" prefWidth="331.0" spacing="30.0" visible="false">
+                           <children>
+                              <Button fx:id="personalDetailnextBtn" contentDisplay="RIGHT" defaultButton="true" mnemonicParsing="false" onAction="#handlePersonalDetailNextBtn" styleClass="btn10" text="Next   " textFill="TEAL">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="LONG_ARROW_RIGHT" size="18" wrappingWidth="25.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="cancelBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleCancelBtn" styleClass="btn10" text="Cancel" textFill="TEAL">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="18" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" left="5.0" right="5.0" top="25.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="ReceiptBox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="302.0" prefWidth="333.0" spacing="20.0" style="-fx-background-color: white;" visible="false">
+                     <children>
+                        <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Receipt" underline="true" />
+                        <HBox alignment="CENTER" prefHeight="155.0" prefWidth="333.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <GridPane alignment="CENTER" hgap="5.0" prefHeight="132.0" prefWidth="265.0" vgap="5.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="113.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Text fill="TEAL" strokeType="OUTSIDE" strokeWidth="0.0" text="Pay" GridPane.rowIndex="2" />
+                                    <Text fill="TEAL" layoutX="10.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount" GridPane.rowIndex="1" />
+                                    <Text fx:id="payText" fill="TEAL" layoutX="10.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Text fx:id="discountText" fill="TEAL" layoutX="110.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Text fx:id="totalAmountText" fill="TEAL" layoutX="110.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" />
+                                    <Text fill="TEAL" layoutX="110.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="333.0" spacing="30.0">
+                           <children>
+                              <Button fx:id="printBtn" contentDisplay="RIGHT" defaultButton="true" mnemonicParsing="false" onAction="#handlePrintBtn" styleClass="btn10" text="Print" textFill="TEAL">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PRINT" size="18" wrappingWidth="25.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="printCancelBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handlePrintCancelBtn" styleClass="btn10" text="Cancel" textFill="TEAL">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="18" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" opacity="0.3" prefHeight="88.0" prefWidth="1027.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/needle(1).png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" right="20.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

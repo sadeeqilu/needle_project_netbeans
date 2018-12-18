@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="dashboard" alignment="TOP_CENTER" prefHeight="479.0" prefWidth="848.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.needle.controller.GuestPageController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="657.0" style="-fx-border-color: orange; -fx-border-width: 0px 0px 0.3px 0px; -fx-background-color: #2A3135;">
+         <children>
+            <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="GUESTS" wrappingWidth="113.2109375">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="818.0" spacing="5.0">
+         <children>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#handleNewGuestBtn" prefHeight="30.0" prefWidth="108.0" styleClass="btn2" stylesheets="@application.css" text="New">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="BED" size="20" wrappingWidth="30.85714340209961" />
+               </graphic>
+            </Button>
+            <VBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="searchGuestText" prefHeight="26.0" prefWidth="184.0" promptText="search" style="-fx-background-color: transparent; -fx-border-color: orange; -fx-border-width: 0px 0px 0.7px 0px;" styleClass="txtbox">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <FontAwesomeIconView fill="ORANGE" glyphName="SEARCH" size="20" />
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true">
+         <content>
+            <TableView fx:id="guestsTable" prefHeight="299.0" prefWidth="657.0">
+              <columns>
+                <TableColumn fx:id="phoneNumberCol" editable="false" prefWidth="75.0" text="Phone number" />
+                <TableColumn fx:id="fnameCol" editable="false" prefWidth="89.0" text="First name" />
+                  <TableColumn fx:id="lnameCol" editable="false" prefWidth="92.0" text="Last name" />
+                  <TableColumn fx:id="genderCol" editable="false" prefWidth="107.0" text="Gender" />
+                  <TableColumn fx:id="dobCol" editable="false" prefWidth="107.0" text="Date of birth" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="657.0" spacing="15.0" stylesheets="@application.css">
+         <children>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#handleUpdateGuestBtn" prefHeight="30.0" prefWidth="130.0" styleClass="btn2" text="Update">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="REFRESH" size="20" wrappingWidth="25.14285659790039" />
+               </graphic>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDelGuestBtn" prefHeight="30.0" prefWidth="108.0" styleClass="btn2" text="Delete">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="TRASH" size="20" wrappingWidth="22.714285850524902" />
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
